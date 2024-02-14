@@ -10,21 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true }));
 
 
+app.use('/api', require('./router/userRouter'))
+
 app.listen(port, (req, res) => {
     console.log(`Servidor rodando na Porta: ${port}`)
-})
-
-
-
-app.get('/', (req, res) => {
-    res.send('Hello this is our first api + home');
-})
-
-app.get('/teste1', (req, res) => {
-    res.send('Hello this is our first api + teste1');
-})
-
-
-app.get('/teste2', (req, res) => {
-    res.send('Hello this is our first api + teste2');
 })
